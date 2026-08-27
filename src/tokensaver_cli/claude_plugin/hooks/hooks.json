@@ -1,0 +1,22 @@
+{
+  "SessionStart": [
+    {
+      "hooks": [
+        {
+          "type": "command",
+          "command": "tokensaver status --session-start"
+        }
+      ]
+    }
+  ],
+  "UserPromptSubmit": [
+    {
+      "hooks": [
+        {
+          "type": "command",
+          "command": "tokensaver status --prompt-nudge"
+        }
+      ]
+    }
+  ]
+}
