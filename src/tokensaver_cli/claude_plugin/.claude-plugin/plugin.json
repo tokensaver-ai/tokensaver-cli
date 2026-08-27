@@ -1,0 +1,17 @@
+{
+  "name": "tokensaver-router",
+  "displayName": "TokenSaver Router",
+  "version": "0.3.4",
+  "description": "Route Claude Code through TokenSaver — models, use, approve, Flux IA, quotas, cache, catalog, login/keys.",
+  "author": {
+    "name": "TokenSaver",
+    "url": "https://tokensaver.fr"
+  },
+  "homepage": "https://github.com/tokensaver-ai/tokensaver-cli",
+  "repository": "https://github.com/tokensaver-ai/tokensaver-cli",
+  "license": "MIT",
+  "keywords": ["tokensaver", "router", "mcp", "governance", "cost", "models"],
+  "commands": ["./commands"],
+  "hooks": "./hooks/hooks.json",
+  "mcpServers": "./.mcp.json"
+}
