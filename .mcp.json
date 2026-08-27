@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "tokensaver-route-tools": {
+      "type": "http",
+      "url": "https://mcp.tokensaver.fr/mcp",
+      "headers": {
+        "Authorization": "Bearer ts_674a2ea39d3cfd814d5f4a83114ae0d0c701c6cd42744d66"
+      }
+    },
+    "tokensaver-route-gateway": {
+      "type": "http",
+      "url": "https://gateway.tokensaver.fr/mcp",
+      "headers": {
+        "Authorization": "Bearer ts_674a2ea39d3cfd814d5f4a83114ae0d0c701c6cd42744d66",
+        "X-Tokensaver-Client": "claude-code/1.0",
+        "X-Organisation-ID": "abd3a97e-21f8-40c7-bd13-76840fe1a5ff",
+        "X-Workspace-ID": "4a693af8-4ae8-444b-a289-9584cfb8e668"
+      }
+    }
+  }
+}
