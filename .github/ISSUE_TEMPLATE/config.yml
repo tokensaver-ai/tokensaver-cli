@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: TokenSaver platform & enterprise
+    url: https://tokensaver.fr
+    about: Demos, Early Adopter program, and team plans
+  - name: CLI documentation
+    url: https://github.com/tokensaver-ai/tokensaver-cli/tree/main/docs
+    about: Full command reference and integration guides
+  - name: Security report
+    url: mailto:contact@tokensaver.fr
+    about: Report vulnerabilities privately (do not open a public issue)
