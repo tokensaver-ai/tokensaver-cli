@@ -1,0 +1,88 @@
+# TokenSaver CLI — llms.txt
+# https://github.com/tokensaver-ai/tokensaver-cli
+# Product: https://tokensaver.fr · Console: https://platform.tokensaver.fr
+# Platform Docs: https://platform.tokensaver.fr (sidebar Docs → Build / Connect)
+
+> Open-source CLI (`tokensaver-cli`, command `tokensaver`) — one on-ramp to the
+> TokenSaver governed control plane. Same plane via LLM egress, Python SDK/REST,
+> MCP tools, and Trust Gateway. MIT. Python ≥ 3.10. Stdlib only.
+
+## Install & 60-second start (CLI path)
+
+pip install -U tokensaver-cli
+tokensaver login
+tokensaver route claude --launch
+tokensaver doctor --claude
+tokensaver flows --open
+
+## Connect paths (same control plane)
+
+- CLI (this repo): tokensaver route claude|cursor|codex|proxy|mcp
+- LLM egress OpenAI-shaped: https://api.tokensaver.fr/openai/v1 + Bearer ts_…
+- LLM egress Anthropic-shaped: https://api.tokensaver.fr/anthropic + Bearer ts_…
+- Native API / SDK: https://api.tokensaver.fr/api/v1 · https://pypi.org/project/tokensaver-sdk/
+- MCP tools (A): https://mcp.tokensaver.fr/mcp
+- MCP Trust Gateway (B): https://gateway.tokensaver.fr/mcp
+- A2A: console Docs → Build → A2A
+- OSS guide: docs/connect-control-plane.md
+- Product Docs (in console): https://platform.tokensaver.fr → Docs → Build / Connect
+- Do not confuse LLM HTTP egress with MCP Gateway or A2A
+
+## What TokenSaver is
+
+- AI trust / governance platform (SaaS): cache, RAG, compression, PII, quotas, audit, Flux IA
+- **600+ models** in Agent Registry (Pro/BYOK); **Free plan = 15 hosted models**
+- Zero Trust Agent Registry for LLM models
+- Console: https://platform.tokensaver.fr (signup / login)
+- Flux IA (live runs): …/en/{workspaceId}/dashboard?tab=flows — CLI: tokensaver flows --open
+- Agentic graph: …/en/{workspaceId}/execution-graph?period=7d
+
+## CLI commands (high level)
+
+- Auth: login, logout, whoami, keys list|create|revoke
+- Route: route claude|cursor|codex|proxy|mcp [--launch]; unroute <target>
+- Models: models, use, profiles, approve, catalog
+- Observability: flows [--open], status, quota
+- Health: doctor [--claude] [--local]
+
+## Claude Code plugin
+
+After `tokensaver route claude`, skill `tokensaver-router` slash commands:
+/tokensaver-router:welcome, :models, :use, :flows, :quota, :cache, :doctor, :help
+
+For usage / runs lists prefer Bash: `tokensaver quota` · `tokensaver flows`
+(do not invent MCP tool names).
+
+## Credentials
+
+- File: ~/.config/tokensaver/credentials.json (mode 0600)
+- Env override: TOKENSAVER_API_KEY=ts_…
+- Self-host: TOKENSAVER_MODE=local or --local on commands
+
+## Documentation URLs
+
+- Connect (multi-path): docs/connect-control-plane.md
+- Quick start: docs/quickstart.md
+- Models & Free plan: docs/models-and-free-plan.md
+- Claude Code: docs/claude-code.md
+- Examples: examples/01-login-and-route.sh … 04-llm-egress.sh
+- Platform Docs: https://platform.tokensaver.fr (Docs → Build / Connect)
+- PyPI CLI: https://pypi.org/project/tokensaver-cli/
+- PyPI SDK: https://pypi.org/project/tokensaver-sdk/
+
+## OSS vs platform
+
+- This repo (tokensaver-ai/tokensaver-cli): public mirror of packages/cli — MIT
+- Platform backend/console: proprietary SaaS; CLI is the free laptop on-ramp
+- Do not confuse with unrelated PyPI package name `tokensaver` (different project)
+
+## Free plan models (15, CLI ref openrouter/…)
+
+cheap/default/strong profiles → gpt-5-nano, gpt-oss-20b, deepseek-chat-v3-0324
+Full list: docs/models-and-free-plan.md
+Live: tokensaver models (after tokensaver login)
+
+## Contributing
+
+- Issues: https://github.com/tokensaver-ai/tokensaver-cli/issues
+- Pull requests welcome on this public mirror (see CONTRIBUTING.md)
