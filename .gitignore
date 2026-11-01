@@ -1,0 +1,25 @@
+# Local / build artifacts
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Secrets — never commit (real keys live in ~/.config/tokensaver/ or shell env)
+.env
+.env.*
+!.env.example
+credentials.json
+secrets.json
+*.pem
+*.key
+id_rsa
+id_ed25519
+.DS_Store
